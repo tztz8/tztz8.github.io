@@ -52,7 +52,7 @@ function setup() {
     myCanvas.parent('myContainer'); // I am tell the p5 scrip to put the canvas where i have the id of myContainer
     background(bacColer);
 
-    socket = io.connect('https://timbre.0ssh.ga:8192');
+    socket = io.connect('https://home.tftinker.club:8192');
     socket.on('mouse', updatDrawingFS);
     socket.on('users', updateOtherUser);
     socket.on('Tusersb', function (data) {
