@@ -35,7 +35,7 @@ function setup() { //run ones
 
     // Create the GUI
     //sliderRange(10, 500, 5);
-    gui = createGui('Size Changer');
+    gui = createGui('Size Changer', 20, 600);
     gui.addGlobals('barWidth', 'trgWidth', 'ObjectModeXY');
 }
 
