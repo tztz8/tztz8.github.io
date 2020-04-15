@@ -1,0 +1,73 @@
+#intro {
+  text-align: center;
+  padding: 25px;
+}
+
+@media (min-width: 576px) {
+  #intro {
+    padding: 15px;
+  }
+}
+
+#intro .jumbotron {
+  border-radius: 20px;
+  padding: 40px;
+  background-color: rgba(1,0,71,0.7);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  #intro .jumbotron {
+    padding: 20px;
+  }
+}
+
+#intro .jumbotron h1 {
+  color: rgb(255,255,255);
+}
+
+#intro .jumbotron p {
+  color: rgb(255,255,255);
+}
+
+#intro img {
+  max-height: 40px;
+  margin: 6px;
+}
+
+#Project {
+  display: none;
+  text-align: center;
+  padding: 25px;
+}
+
+#ProjectDisplay {
+  text-align: center;
+  padding: 25px;
+}
+
+#myContainer {
+  width: 80%;
+  width: 720px;
+  height: 400px;
+  background-color: rgb(25,212,189);
+  margin: 0 auto;
+}
+
+.portfolio-block.projects-cards .card-body {
+  background: linear-gradient(to bottom, #66ffff 0%, #33ccff 100%);
+}
+
+.timbre-blue-background-gradient {
+  background: linear-gradient(to top right, #3399ff 0%, #3333cc 100%);
+}
+
+.timbre-blue-background-gradient-2 {
+  background: rgb(0,52,255);
+  background: linear-gradient(351deg, rgba(0,52,255,1) 0%, rgba(0,169,196,1) 72%, #3399ff 100%);
+}
+
+#title {
+  padding: 20px;
+}
