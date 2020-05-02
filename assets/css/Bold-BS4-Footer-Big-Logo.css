@@ -76,6 +76,14 @@
   color: #007BB6;
 }
 
+#myFooter .meritpages:hover {
+  color: #00aced;
+}
+
+#myFooter .github:hover {
+  color: #0077e2;
+}
+
 #myFooter .btn {
   color: white;
   background-color: #d84b6b;
