@@ -1,5 +1,19 @@
 // Server set up
 
+var port = 8192;
+
+// const { exec } = require('child_process');
+// exec('java -jar /home/tztz8/dev/java/portmapper/build/portmapper-2.2.1.jar -add -externalPort '+port+' -internalPort '+port+' -protocol tcp -description "VM-Projects-003(Draw-NetworkServer)" > /home/tztz8/myLogs/portmapper.DrawNetworkServer.log', (err, stdout, stderr) => {
+//     if (err) {
+//         //some err occurred
+//         console.error(err)
+//     } else {
+//         // the *entire* stdout and stderr (buffered)
+//         console.log(`stdout: ${stdout}`);
+//         console.log(`stderr: ${stderr}`);
+//     }
+// });
+
 // Pulling in the library (express)
 var express = require('express');
 
@@ -11,15 +25,22 @@ var fs = require('fs');
 // https prodicall libary
 var https = require('https');
 
+// Certificate
+const domainName = 'droplet.tftinker.tech';
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/'+ domainName +'/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/'+ domainName +'/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/'+ domainName +'/chain.pem', 'utf8');
+
 // the files need for https
 var options = {
-    key: fs.readFileSync('./private.key').toString(),
-    cert: fs.readFileSync('./certificate.crt').toString()
+    key: privateKey,
+    cert: certificate,
+    ca: ca
 };
 
 // Set a port listener to server at a port (port:8192)
 //var server = app.listen(8192); // not https
-var server = https.createServer(options, app).listen(8192);
+var server = https.createServer(options, app).listen(port);
 
 // this line of code is to host files on the port --> library.use(name of library.not changing files(folder));
 //app.use(express.static('puplic'));
